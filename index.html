@@ -1,0 +1,438 @@
+<title>Olena Ivanova</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap">
+
+<style>
+/* Layout: a ledger — left-aligned columns, ruled horizontal bands, tabular data blocks. */
+:root {
+  --ground: #F7F5F0;
+  --surface: #FFFFFF;
+  --ink: #1C2127;
+  --ink-soft: #5A6069;
+  --rule: #DCD7CC;
+  --signal: #B06A08;
+  --signal-soft: #FBF0DD;
+
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "IBM Plex Sans", system-ui, sans-serif;
+  --data: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #15191E;
+    --surface: #1C2127;
+    --ink: #EDE9E1;
+    --ink-soft: #9BA3AC;
+    --rule: #333A43;
+    --signal: #E8A33D;
+    --signal-soft: #2A2317;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #15191E;
+  --surface: #1C2127;
+  --ink: #EDE9E1;
+  --ink-soft: #9BA3AC;
+  --rule: #333A43;
+  --signal: #E8A33D;
+  --signal-soft: #2A2317;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.wrap {
+  max-width: 940px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+
+.eyebrow {
+  font-family: var(--data);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--signal);
+  margin: 0 0 14px;
+}
+
+/* ---- masthead ---- */
+
+.masthead { padding-block: 72px 56px; border-bottom: 2px solid var(--ink); }
+
+.masthead h1 {
+  font-size: clamp(38px, 7vw, 62px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+  margin-bottom: 20px;
+}
+
+.standfirst {
+  font-size: clamp(17px, 2.4vw, 20px);
+  line-height: 1.5;
+  max-width: 34em;
+  color: var(--ink-soft);
+  margin: 0 0 28px;
+}
+
+.standfirst strong { color: var(--ink); font-weight: 500; }
+
+.vitals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  font-family: var(--data);
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.vitals li { display: flex; gap: 8px; min-width: 0; }
+.vitals b { font-weight: 500; color: var(--signal); }
+
+/* ---- sections ---- */
+
+section { padding-block: 56px; border-bottom: 1px solid var(--rule); }
+
+.sec-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
+  margin-bottom: 32px;
+}
+
+.sec-head h2 {
+  font-size: clamp(22px, 3vw, 27px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.sec-head .note {
+  font-family: var(--data);
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+/* ---- work entries ---- */
+
+.entry {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 10px 36px;
+  padding-block: 26px;
+  border-top: 1px solid var(--rule);
+}
+.entry:first-of-type { border-top: none; padding-top: 0; }
+
+.entry-meta { font-family: var(--data); font-size: 12px; color: var(--ink-soft); }
+.entry-meta span { display: block; }
+.entry-meta .sector { color: var(--ink); font-weight: 500; }
+
+.entry h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.entry p { margin: 0 0 12px; max-width: 60ch; }
+.entry p:last-child { margin-bottom: 0; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+
+.tags li {
+  font-family: var(--data);
+  font-size: 11px;
+  padding: 3px 9px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  color: var(--ink-soft);
+  background: var(--surface);
+}
+
+/* ---- cards ---- */
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.card h3 { font-size: 17px; font-weight: 600; }
+.card p { margin: 0; font-size: 15px; color: var(--ink-soft); max-width: 48ch; }
+
+.card a.go {
+  font-family: var(--data);
+  font-size: 12.5px;
+  color: var(--signal);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  align-self: flex-start;
+  margin-top: 4px;
+  padding-bottom: 1px;
+}
+.card a.go:hover { color: var(--ink); }
+
+.status {
+  font-family: var(--data);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--signal);
+  background: var(--signal-soft);
+  border-radius: 3px;
+  padding: 3px 8px;
+  align-self: flex-start;
+}
+
+/* ---- ledger table ---- */
+
+.ledger { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.ledger th, .ledger td { text-align: left; padding: 11px 16px 11px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.ledger th {
+  font-family: var(--data);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.ledger td.yr { font-family: var(--data); font-size: 13px; color: var(--signal); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ledger td.org { font-weight: 500; }
+.ledger td.role { color: var(--ink-soft); }
+.scroller { overflow-x: auto; }
+
+/* ---- certifications ---- */
+
+.certs { padding: 0; margin: 0; list-style: none; display: grid; gap: 14px; }
+.certs li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 20px; padding-bottom: 14px; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.certs .name { font-weight: 500; }
+.certs .id { font-family: var(--data); font-size: 12px; color: var(--ink-soft); white-space: nowrap; }
+
+/* ---- footer ---- */
+
+footer { padding-block: 48px 64px; }
+.contact { display: flex; flex-wrap: wrap; gap: 12px 30px; font-family: var(--data); font-size: 13.5px; }
+.contact a { color: var(--signal); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
+.contact a:hover { border-color: currentColor; }
+.colophon { margin-top: 28px; font-family: var(--data); font-size: 11.5px; color: var(--ink-soft); }
+
+a:focus-visible, .card a:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 2px; }
+
+@media (max-width: 620px) {
+  .entry { grid-template-columns: 1fr; gap: 6px; }
+  .entry-meta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .masthead { padding-block: 48px 40px; }
+  section { padding-block: 44px; }
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">Tampa, Florida</p>
+    <h1>Olena Ivanova</h1>
+    <p class="standfirst">
+      I build <strong>Microsoft Dynamics 365 Business Central</strong> systems for companies
+      whose operations don't fit standard ERP — aviation parts distribution, regulated
+      manufacturing, and multi-channel commerce.
+    </p>
+    <ul class="vitals">
+      <li><b>Since</b> 2006</li>
+      <li><b>Stack</b> Dynamics NAV → Business Central</li>
+      <li><b>Delivered in</b> US · Canada · UK · EU · AU</li>
+    </ul>
+  </header>
+
+  <section id="work">
+    <div class="sec-head">
+      <h2>Selected work</h2>
+      <span class="note">Clients anonymized</span>
+    </div>
+
+    <article class="entry">
+      <div class="entry-meta">
+        <span class="sector">Aviation aftermarket</span>
+        <span>Florida, US</span>
+        <span>2026 — ongoing</span>
+      </div>
+      <div>
+        <h3>Core exchange economics in Business Central</h3>
+        <p>
+          When an aviation parts distributor sells a rotable component, the customer pays for
+          the part and a refundable core deposit, returned when the worn unit comes back for
+          overhaul. Business Central models none of it.
+        </p>
+        <p>
+          I designed companion document structures that carry the core value separately from
+          the part, segregated credit management so core exposure doesn't consume a customer's
+          trading limit, automated ledger application to net core credits at operational volume,
+          and purchase order lifecycle logic that waits on the physical return rather than the
+          invoice.
+        </p>
+        <ul class="tags">
+          <li>AL extensions</li><li>Application engine</li><li>Posting groups</li><li>Master data APIs</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-meta">
+        <span class="sector">Direct-to-consumer retail</span>
+        <span>US · UK · EU</span>
+        <span>2026</span>
+      </div>
+      <div>
+        <h3>Custom commerce integration for a multi-brand retailer</h3>
+        <p>
+          The standard Shopify connector couldn't carry this retailer's reality: two brands,
+          three warehouse regions, payment service provider settlement, zero-value bundle orders,
+          and refunds that split into two different accounting paths depending on whether goods
+          came back.
+        </p>
+        <p>
+          I built the integration from the Business Central side — published API endpoints,
+          staging tables with replay protection, job queue orchestration, OAuth 2.0 against
+          Entra ID, and settlement reconciliation against a virtual bank account.
+        </p>
+        <ul class="tags">
+          <li>REST / OData</li><li>OAuth 2.0</li><li>Job queue</li><li>Idempotency</li><li>PSP settlement</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-meta">
+        <span class="sector">Precision manufacturing</span>
+        <span>North America</span>
+        <span>2024 — 2025</span>
+      </div>
+      <div>
+        <h3>ERP implementation for an aerospace and defense supplier</h3>
+        <p>
+          Full-cycle Business Central implementation for a precision machining operation
+          supplying aerospace, defense, and semiconductor customers, where traceability and
+          documentation obligations shape how the system has to be configured.
+        </p>
+        <ul class="tags">
+          <li>Implementation</li><li>Data migration</li><li>Manufacturing</li><li>Traceability</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section id="open-source">
+    <div class="sec-head">
+      <h2>Open source</h2>
+      <span class="note">MIT licensed</span>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="status">v0.1</span>
+        <h3>BC Supply Chain Scanner</h3>
+        <p>
+          Inventories every extension installed in a Business Central tenant and classifies
+          publishers by trust tier — groundwork for vulnerability tracking and SBOM output,
+          following the practices set out in Executive Order 14028 and NIST SP 800-161.
+        </p>
+        <a class="go" href="https://github.com/YOUR-HANDLE/bc-supply-chain-scanner">github.com →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="writing">
+    <div class="sec-head">
+      <h2>Writing</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Building aviation parts distribution in Business Central</h3>
+        <p>
+          A field report on five architectural patterns from an FAA-regulated parts
+          distributor — and why each one generalizes beyond aviation to any business whose
+          commercial model doesn't fit the software.
+        </p>
+        <a class="go" href="YOUR-ARTICLE-URL">Read on LinkedIn →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="background">
+    <div class="sec-head">
+      <h2>Background</h2>
+    </div>
+    <div class="scroller">
+      <table class="ledger">
+        <thead>
+          <tr><th scope="col">Years</th><th scope="col">Organization</th><th scope="col">Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="yr">2026 —</td><td class="org">Queue Associates</td><td class="role">Senior Business Central Developer</td></tr>
+          <tr><td class="yr">2025 — 2026</td><td class="org">The NAV People</td><td class="role">Senior Business Central Developer</td></tr>
+          <tr><td class="yr">2019 — 2025</td><td class="org">EFOQUS</td><td class="role">Senior Business Central Developer</td></tr>
+          <tr><td class="yr">2012 — 2019</td><td class="org">Lanteria</td><td class="role">Dynamics NAV Developer</td></tr>
+          <tr><td class="yr">2006 — 2012</td><td class="org">Celenia · SuperSonicImagine · Hume</td><td class="role">NAV Developer, Analyst, Project Manager</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="sec-head">
+      <h2>Certifications</h2>
+      <span class="note">Microsoft Learn · 8 examinations passed, 2006–2025</span>
+    </div>
+    <ul class="certs">
+      <li>
+        <span class="name">Microsoft Certified: Dynamics 365 Business Central Developer Associate</span>
+        <span class="id">2025</span>
+      </li>
+      <li>
+        <span class="name">Microsoft Specialist: Dynamics NAV 2013 Installation and Configuration</span>
+        <span class="id">2014</span>
+      </li>
+      <li>
+        <span class="name">Microsoft Certified Professional</span>
+        <span class="id">2014</span>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="eyebrow">Contact</p>
+    <div class="contact">
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN">LinkedIn</a>
+      <a href="https://github.com/YOUR-HANDLE">GitHub</a>
+      <span>YOUR-EMAIL</span>
+    </div>
+    <p class="colophon">Set in Archivo and IBM Plex. Built and maintained by hand.</p>
+  </footer>
+
+</div>
